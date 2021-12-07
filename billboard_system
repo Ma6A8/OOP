@@ -1,0 +1,93 @@
+
+
+
+class Songs:
+    def __init__(self,
+                 title,
+                 artist,
+                 year):
+        self.title = title
+        self.artist = artist
+        self.year = year
+
+
+
+# class year:
+#     def __init__(self,
+#                  title,
+#                  author,
+#                  journal,
+#                  publisher):
+#         self.title = title
+#         self.author = author
+#         self.journal = journal
+#         self.publisher = publisher
+
+
+# class author:
+#     def __init__(self,
+#                  name,
+#                  title,
+#                  journal,
+#                  publisher):
+#         self.name = name
+#         self.title = title
+#         self.journal = journal
+#         self.publisher = publisher
+
+songs_N = []
+
+def read_songs_file(self):
+    error_count = 0
+    success_count = 0
+    file = open("wiki_hot_100s.txt")
+    for line in file.readlines():
+        line.strip()
+        if isinstance(line[0], int) == false:
+            continue
+        else:
+            temp_line = line.split('\t')
+            if len(temp_line) != 4:
+                error_count += 1
+                continue
+            else:
+                title = temp_line[1]
+                artist = temp_line[2]
+                year = temp_line[3]
+                song = Songs(title, artist, year)
+                songs_N.append(song)
+    success_count = len(songs_N)
+    print("Successfully read", success_count, "songs, ", error_count, "read errors occurred")
+
+
+def songs_in_a_year(self, year):
+    for song in songs_N:
+        if song.year == year:
+            print(song.title, '\n')
+        else:
+            continue
+
+
+dict_artists = {}
+
+def all_artists(self):
+
+    for song in songs_N:
+        dict_artists[song.artist] = dict_artists.get(song.artist) + 1
+
+    for artist in sorted(dict_artists):
+        print(artist, ": ", dict_artists[artist], '\n')
+
+
+dict_songs = {}
+
+def top_n_songs(self, n):
+    for song in songs_N:
+        dict_songs[song.title] = dict_songs.get(song.title) + 1
+
+    sorted_dict_songs = sorted(dict_songs.items(), key = labmda item:item[1], reverse = true)
+    for i in range(n)
+        print(sorted_dict_songs[i], '\n')
+
+
+
